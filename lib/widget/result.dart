@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
 
-class Result extends StatelessWidget {
-  const Result({Key key, @required double result})
-      : _result = result,
-        super(key: key);
-
-  final double _result;
+class result extends StatelessWidget {
+  const result({
+    Key? key,
+    required this.hasil,
+  }) : super(key: key);
+  final double hasil;
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return Container(
+      margin: const EdgeInsets.only(top: 20, bottom: 20),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("Hasil Konversi"),
-          Container(
-            margin: EdgeInsets.only(top: 20, bottom: 20),
-            child: Text(
-              _result.toStringAsFixed(2),
-              style: TextStyle(fontSize: 36),
-            ),
+          const Text(
+            "Hasil",
+            style: TextStyle(fontSize: 20),
           ),
+          Text(
+            hasil.toStringAsFixed(1),
+            style: const TextStyle(fontSize: 30),
+          )
         ],
       ),
     );
